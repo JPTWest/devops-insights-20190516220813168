@@ -147,10 +147,10 @@
       assert(resMock.send.lastCall.calledWith('Failed to get the data'), 'Unexpected response:' + resMock.send.lastCall.args);
     });
 
-    it('with incomplete zip code', function() {
+    it('with incomplete city', function() {
       reqMock = {
         query: {
-          zip: 79968
+          city: 'auckland'
         }
       };
 
