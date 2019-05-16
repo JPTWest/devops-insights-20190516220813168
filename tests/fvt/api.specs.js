@@ -15,7 +15,7 @@
 
     describe('Get Weather', function() {
 
-    	it('with valid city', function(done) {
+    	it('with valid zip code', function(done) {
         if(!appUrl) {
             assert.fail("Environment variable APP_URL is not defined");
             return done();
@@ -27,7 +27,7 @@
           	if(err) {
           		assert.fail('Failed to get the response');
           	} else {
-              assert.equal(resp.statusCode, 400);
+              assert.equal(resp.statusCode, 200);
               var pbody = JSON.parse(body);
               assert((pbody.city === 'Anderson Mill') || (pbody.city === 'Round Rock'), "City name does not match");
               done();
@@ -65,7 +65,7 @@
           	if(err) {
           		assert.fail('Failed to get the response');
           	} else {
-              assert.equal(resp.statusCode, 400);
+              assert.equal(resp.statusCode, 200);
               var pbody = JSON.parse(body);
               assert(pbody.city === 'Round Rock', "City name does not match");
               done();
